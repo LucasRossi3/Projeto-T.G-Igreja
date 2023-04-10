@@ -3,7 +3,7 @@
 <img src="https://user-images.githubusercontent.com/99259327/187318644-d6e53541-e582-4f90-81be-aa24393a72b3.png" width="300" />
 <p>
 
-# <h1 align="center"> *Maestro:* **Projeto engenharia de software II** </h1>
+# <h1 align="center"> *Maestro:* **Projeto Engenharia de Software IIi** </h1>
 # <h1 align="center"> Membros do grupo: </h1>
 Evandro Rodrigues Tiburcio - 0030481921018
 
@@ -15,10 +15,24 @@ Lucas José Marcondes Rossi - 0030482121023
 
 Rogério Ferreira de Souza - 0030482221007
 
-# <h1 align="center"> Resumo:
+# <h1 align="center"> Cliente:
 
 <p text-align: justify>
 	<p>
+	TROCAR AS VARIÁVEIS 
+
+	NOME_DO_PRIMEIRO_PASTOR
+	TEMPO_PASTOR_PASSOU_PRESIDENCIA
+	NUMERO_DE_CONGREGACOES
+
+	A Igreja Assembleia de Deus Ministério El Shaddai Nacional (AD El Shaddai) com sede inscrita no CNPJ: 06.223.126/0001-01, situada Rua Príncipe, 20 Vila Lourdes - Carapicuíba/SP foi fundada no ano de 2002 pelo então pastor presidente NOME_DO_PRIMEIRO_PASTOR na cidade de Flórida nos Estados Unidos. Após aproximadamente TEMPO_PASTOR_PASSOU_PRESIDENCIA anos o pastor NOME_DO_PRIMEIRO_PASTOR passou a presidência do ministério ao novo presidente, e ainda  atual, pastor Manuel Batista.
+	Atualmente AD El Shaddai, é formada pela sua sede e mais NUMERO_DE_CONGREGACOES congregações, nos Estados de São Paulo, Paraná e Rio Grande do Norte.
+
+# <h1 align="center"> As Necessidades:
+
+<p text-align: justify>
+	<p>
+	
 	O projeto Maestro será um conjunto de micros serviços que realizarão a gestão de controle de acesso dos seguimentos de portaria, sendo a orgânica (com atendente in loco - "PO") ou eletrônica (remota - "PR" ou virtual - "PV"). Desses seguimentos, o projeto terá maior ênfase no sistema de portaria remota, sendo esse um nicho de mercado onde não há a presença física de um operador de controle de acesso no cliente, porém, existem vários operadores (para um mesmo cliente) em uma central de operações monitorando a portaria desse cliente a distância.
 
 #### Os objetivos iniciais são:
