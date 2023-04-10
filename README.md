@@ -1,7 +1,7 @@
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99259327/187318644-d6e53541-e582-4f90-81be-aa24393a72b3.png" width="300" />
-<p>
+</p>
 
 # <h1 align="center"> *Maestro:* **Projeto Engenharia de Software IIi** </h1>
 # <h1 align="center"> Membros do grupo: </h1>
@@ -15,25 +15,29 @@ Lucas José Marcondes Rossi - 0030482121023
 
 Rogério Ferreira de Souza - 0030482221007
 
-# <h1 align="center"> Cliente:
+# <h1 align="center"> Cliente: </h1>
 
-<p text-align: justify>
-	<p>
-	TROCAR AS VARIÁVEIS 
-	
-	NOME_DO_PRIMEIRO_PASTOR
-	TEMPO_PASTOR_PASSOU_PRESIDENCIA
-	NUMERO_DE_CONGREGACOES
 
+ [TROCAR AS VARIÁVEIS]
+- NOME_DO_PRIMEIRO_PASTOR
+- TEMPO_PASTOR_PASSOU_PRESIDENCIA
+- NUMERO_DE_CONGREGACOES
+
+<p  align="justify">
 	A Igreja Assembleia de Deus Ministério El Shaddai Nacional (AD El Shaddai) com sede inscrita no CNPJ: 06.223.126/0001-01, situada Rua Príncipe, 20 Vila Lourdes - Carapicuíba/SP foi fundada no ano de 2002 pelo então pastor presidente NOME_DO_PRIMEIRO_PASTOR na cidade de Flórida nos Estados Unidos. Após aproximadamente TEMPO_PASTOR_PASSOU_PRESIDENCIA anos o pastor NOME_DO_PRIMEIRO_PASTOR passou a presidência do ministério ao novo presidente, e ainda  atual, pastor Manuel Batista.
 	Atualmente AD El Shaddai, é formada pela sua sede e mais NUMERO_DE_CONGREGACOES congregações, nos Estados de São Paulo, Paraná e Rio Grande do Norte.
-
+</p>
 # <h1 align="center"> As Necessidades:
-
-<p text-align: justify>
-	<p>
-	
-	O projeto Maestro será um conjunto de micros serviços que realizarão a gestão de controle de acesso dos seguimentos de portaria, sendo a orgânica (com atendente in loco - "PO") ou eletrônica (remota - "PR" ou virtual - "PV"). Desses seguimentos, o projeto terá maior ênfase no sistema de portaria remota, sendo esse um nicho de mercado onde não há a presença física de um operador de controle de acesso no cliente, porém, existem vários operadores (para um mesmo cliente) em uma central de operações monitorando a portaria desse cliente a distância.
+	Gerenciamento de membros: Incluindo informações pessoais, contribuições.
+	Gerenciamento de obreiros: Gerenciar a função exercida e dados sobre consagração.
+	Gerenciamento financeiro: Registro de doações, ofertas e dízimos, emissão de relatórios financeiros, gerenciamento de despesas e orçamentos.
+	Gerencianento de eventos: Agendamento das atividades da igreja sede e das congregações, bem como enviar lembretes aos membros.
+	Gerenciamento de ministérios [departamentos]: Gerir os departamentos da igreja sede, e das congregações, ex.: Grupo de Jovens, Grupo Gesto, Banda, Evangelismo, Visita no Lar, sendo possível disponibilizar as escalas de cada membro.
+	Comunicação: Enviar e-mails e notificações push para os membros, bem como o compartilhamento de informações e anúncios importantes via aplicativo.
+	Gerenciamento de documentos: Gerir o Armazenamento e compartilhamento de documentos importantes, como atas de reuniões, contratos e estatuto da igreja.
+	Relatórios: Relatórios detalhados sobre a participação dos obreiros, finanças e atividades da igreja.
+	Gerenciamento de múltiplas unidades: Gerenciamento de múltiplas congregações, incluindo o acesso e gerenciamento de informações específicas de cada unidade.
+	Segurança: Recursos de autenticação de usuários e proteção de dados sensíveis, incluindo níveis de acesso ee permissões.
 
 #### Os objetivos iniciais são:
 * Melhorar a qualidade dos atendimentos, evitando falhas operacionais;
@@ -47,24 +51,7 @@ Rogério Ferreira de Souza - 0030482221007
 - Tela de gerenciamento dos dispositivos de controle de acesso, VoIp e CTFV de cada cliente;
 - Tela de atendimento operacional (PO e PR).
 
-	<p>
-	O sistema irá contar com uma tela para cadastro de pessoas, possuindo o "tipo de pessoa" que seria uma identificação para diferenciar se a pessoa em questão é um morador, prestador de serviço, visitante, etc. O sistema também contará com a tela principal de utilização, em que haverá grande interação do atendente com o sistema, ou seja, por onde ele realizará os atendimentos remotos com o usuário e controlará equipamentos diversos, utilizando comandos chave. Contudo, será capaz de controlar a abertura de portões, permitindo assim, a entrada e saída de pessoas, onde será feita identificação e prosseguindo com a liberação (ou não) do usuário que pretende adentrar no condomínio. Esta tela será o nosso principal foco no projeto.
-	<p>
 	
-	Um dos pilares do nosso projeto é fazer a integração dos equipamentos, baixar os comandos, o sistema deverá possuir comunicação via voip, ele será software externo, pois conseguimos ter integração mais rápida, que se encaixa em micro serviços. Em qualquer um dos segmentos estes dispositivos fornecem comunicação com os atendentes (sendo possível utilização de equipamento externo ou em um módulo do APP). É obrigatório link de internet de aproximadamente 50 Kbps de up/down por equipamento de voz simultâneo. 
-	<p>
-	
-	O projeto Maestro tem como finalidade atender uma parcela do mercado de segurança patrimonial, nos segmentos de portaria convencional (portaria orgânica - atendimento in-loco; "PO"), portaria remota (atendente dentro de uma base operacional; "PR") e portaria virtual (sem interação de atendente, ou somente exceções; "PV").
-	<p>
-	
-	Para atingir esse objetivo é necessário o controle de acesso de pessoas subdivididas nos principais tipos: proprietários (que não residem no local), moradores, visitantes, visitantes com pré-autorização, prestadores de serviços e prestadores de serviço com pré-autorização.
-Em qualquer dos segmentos é necessário a adequação tecnológica dos clientes que optarem por esse serviço. Dentro as necessidades (in-loco) seguem:
-Módulo de controle de acesso: Em qualquer um dos segmentos esse item funciona no formato stand-alone, ou seja, não há necessidade de liberação por software central para usuários que detenham algum tipo de dispositivo já autorizado para acesso no local. Em caso de falha de comunicação com os demais sistemas esses usuário continuam tendo acesso aos locais previamente autorizados pelos seus dispositivos. Para integração com APP é necessário link de internet com banda de aproximadamente 100 kbps up/down.
-	<p>
-	
-	Sistema de CFTV: Nos segmentos de PO e PR esses dispositivos são utilizados para auxílio no cadastro e identificação de pessoas e para acompanhamento de quaisquer eventos pertinentes ao local. No segmento de PV é utilizado para tomada de decisões e gatilhos para geração de eventos. Esses dispositivos variam o consumo de banda de 250 ~ 1500 kbps de up e 400 kbps de download.
-	<p>
-
  Estrutura:
 	Cloud (a definir)
 <p>
@@ -74,7 +61,7 @@ Módulo de controle de acesso: Em qualquer um dos segmentos esse item funciona n
 - Java + Spring Framework (backend);
 - MariaDB (banco de dados);
 - JavaScript;
-- React JS (html/css); 
+- React JS (html/css);
 - Figma;
 - Visual Studio Code;
 - Versionamento de código pelo GitHub;
@@ -83,11 +70,3 @@ Módulo de controle de acesso: Em qualquer um dos segmentos esse item funciona n
 
 # Links de documentações:
 - Diagrama de casos de uso: 
-	https://lucid.app/lucidchart/29219098-f6ed-4094-b1eb-d77a89ab21de/edit?beaconFlowId=55D3563DB805F653&invitationId=inv_9c534db4-1aca-46ed-be48-01fa7bfb496c&page=0_0#
-- Documentação de casos de uso: 
-	https://docs.google.com/document/d/1tAwxZu7mW3Qp9u33n3CkkHOPFQVcOW8jsGh0PyTV0SA/edit?usp=sharing
-- Diagrama de classes: 
-	https://lucid.app/lucidchart/c9aa15be-181e-4ee5-a5ef-e595188e6be1/edit?viewport_loc=-3625%2C145%2C3700%2C1759%2C0_0&invitationId=inv_1416dc4a-469a-4a27-97c9-1d1e836ccacc
-- Documentação: 
-
-# mudei
