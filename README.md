@@ -27,18 +27,19 @@ Rogério Ferreira de Souza - 0030482221007
 	A Igreja Assembleia de Deus Ministério El Shaddai Nacional (AD El Shaddai) com sede inscrita no CNPJ: 06.223.126/0001-01, situada Rua Príncipe, 20 Vila Lourdes - Carapicuíba/SP foi fundada no ano de 2002 pelo então pastor presidente NOME_DO_PRIMEIRO_PASTOR na cidade de Flórida nos Estados Unidos. Após aproximadamente TEMPO_PASTOR_PASSOU_PRESIDENCIA anos o pastor NOME_DO_PRIMEIRO_PASTOR passou a presidência do ministério ao novo presidente, e ainda  atual, pastor Manuel Batista.
 	Atualmente AD El Shaddai, é formada pela sua sede e mais NUMERO_DE_CONGREGACOES congregações, nos Estados de São Paulo, Paraná e Rio Grande do Norte.
 </p>
+
 # <h1 align="center"> As Necessidades: </h1>
 
-	- Gerenciamento de membros: Incluindo informações pessoais, contribuições.
-	- Gerenciamento de obreiros: Gerenciar a função exercida e dados sobre consagração.
-	- Gerenciamento financeiro: Registro de doações, ofertas e dízimos, emissão de relatórios financeiros, gerenciamento de despesas e orçamentos.
-	- Gerencianento de eventos: Agendamento das atividades da igreja sede e das congregações, bem como enviar lembretes aos membros.
-	- Gerenciamento de ministérios [departamentos]: Gerir os departamentos da igreja sede, e das congregações, ex.: Grupo de Jovens, Grupo Gesto, Banda, Evangelismo, Visita no Lar, sendo possível disponibilizar as escalas de cada membro.
-	- Comunicação: Enviar e-mails e notificações push para os membros, bem como o compartilhamento de informações e anúncios importantes via aplicativo.
-	 - Gerenciamento de documentos: Gerir o Armazenamento e compartilhamento de documentos importantes, como atas de reuniões, contratos e estatuto da igreja.
-	- Relatórios: Relatórios detalhados sobre a participação dos obreiros, finanças e atividades da igreja.
-	- Gerenciamento de múltiplas unidades: Gerenciamento de múltiplas congregações, incluindo o acesso e gerenciamento de informações específicas de cada unidade.
-	- Segurança: Recursos de autenticação de usuários e proteção de dados sensíveis, incluindo níveis de acesso ee permissões.
+- Gerenciamento de membros: Incluindo informações pessoais, contribuições;
+- Gerenciamento de obreiros: Gerenciar a função exercida e dados sobre consagração;
+- Gerenciamento financeiro: Registro de doações, ofertas e dízimos, emissão de relatórios financeiros, gerenciamento de despesas e orçamentos;
+- Gerencianento de eventos: Agendamento das atividades da igreja sede e das congregações, bem como enviar lembretes aos membros;
+- Gerenciamento de ministérios [departamentos]: Gerir os departamentos da igreja sede, e das congregações, ex.: Grupo de Jovens, Grupo Gesto, Banda, Evangelismo, Visita no Lar, sendo possível disponibilizar as escalas de cada membro;
+- Comunicação: Enviar e-mails e notificações push para os membros, bem como o compartilhamento de informações e anúncios importantes via aplicativo;
+- Gerenciamento de documentos: Gerir o Armazenamento e compartilhamento de documentos importantes, como atas de reuniões, contratos e estatuto da igreja;
+- Relatórios: Relatórios detalhados sobre a participação dos obreiros, finanças e atividades da igreja;
+- Gerenciamento de múltiplas unidades: Gerenciamento de múltiplas congregações, incluindo o acesso e gerenciamento de informações específicas de cada unidade;
+- Segurança: Recursos de autenticação de usuários e proteção de dados sensíveis, incluindo níveis de acesso ee permissões;
 
 #### Os objetivos iniciais são:
 * Melhorar a qualidade dos atendimentos, evitando falhas operacionais;
