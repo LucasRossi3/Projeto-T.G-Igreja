@@ -20,18 +20,14 @@ Rogério Ferreira de Souza - 0030482221007
 <p text-align: justify>
 	<p>
 	TROCAR AS VARIÁVEIS 
-
-	<p>
 	
 	NOME_DO_PRIMEIRO_PASTOR
 	TEMPO_PASTOR_PASSOU_PRESIDENCIA
 	NUMERO_DE_CONGREGACOES
-	<p>
-	
-	<p>
+
 	A Igreja Assembleia de Deus Ministério El Shaddai Nacional (AD El Shaddai) com sede inscrita no CNPJ: 06.223.126/0001-01, situada Rua Príncipe, 20 Vila Lourdes - Carapicuíba/SP foi fundada no ano de 2002 pelo então pastor presidente NOME_DO_PRIMEIRO_PASTOR na cidade de Flórida nos Estados Unidos. Após aproximadamente TEMPO_PASTOR_PASSOU_PRESIDENCIA anos o pastor NOME_DO_PRIMEIRO_PASTOR passou a presidência do ministério ao novo presidente, e ainda  atual, pastor Manuel Batista.
 	Atualmente AD El Shaddai, é formada pela sua sede e mais NUMERO_DE_CONGREGACOES congregações, nos Estados de São Paulo, Paraná e Rio Grande do Norte.
-	<p>
+
 # <h1 align="center"> As Necessidades:
 
 <p text-align: justify>
