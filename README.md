@@ -30,16 +30,16 @@ Rogério Ferreira de Souza - 0030482221007
 
 # <h1 align="center"> As Necessidades: </h1>
 
-- Gerenciamento de membros: Incluindo informações pessoais, contribuições;
-- Gerenciamento de obreiros: Gerenciar a função exercida e dados sobre consagração;
-- Gerenciamento financeiro: Registro de doações, ofertas e dízimos, emissão de relatórios financeiros, gerenciamento de despesas e orçamentos;
-- Gerencianento de eventos: Agendamento das atividades da igreja sede e das congregações, bem como enviar lembretes aos membros;
-- Gerenciamento de ministérios [departamentos]: Gerir os departamentos da igreja sede, e das congregações, ex.: Grupo de Jovens, Grupo Gesto, Banda, Evangelismo, Visita no Lar, sendo possível disponibilizar as escalas de cada membro;
-- Comunicação: Enviar e-mails e notificações push para os membros, bem como o compartilhamento de informações e anúncios importantes via aplicativo;
-- Gerenciamento de documentos: Gerir o Armazenamento e compartilhamento de documentos importantes, como atas de reuniões, contratos e estatuto da igreja;
-- Relatórios: Relatórios detalhados sobre a participação dos obreiros, finanças e atividades da igreja;
-- Gerenciamento de múltiplas unidades: Gerenciamento de múltiplas congregações, incluindo o acesso e gerenciamento de informações específicas de cada unidade;
-- Segurança: Recursos de autenticação de usuários e proteção de dados sensíveis, incluindo níveis de acesso ee permissões;
+1. Gerenciamento de membros: Incluindo informações pessoais, contribuições;
+2. Gerenciamento de obreiros: Gerenciar a função exercida e dados sobre consagração;
+3. Gerenciamento financeiro: Registro de doações, ofertas e dízimos, emissão de relatórios financeiros, gerenciamento de despesas e orçamentos;
+4. Gerencianento de eventos: Agendamento das atividades da igreja sede e das congregações, bem como enviar lembretes aos membros;
+5. Gerenciamento de ministérios [departamentos]: Gerir os departamentos da igreja sede, e das congregações, ex.: Grupo de Jovens, Grupo Gesto, Banda, Evangelismo, Visita no Lar, sendo possível disponibilizar as escalas de cada membro;
+6. Comunicação: Enviar e-mails e notificações push para os membros, bem como o compartilhamento de informações e anúncios importantes via aplicativo;
+7. Gerenciamento de documentos: Gerir o Armazenamento e compartilhamento de documentos importantes, como atas de reuniões, contratos e estatuto da igreja;
+8. Relatórios: Relatórios detalhados sobre a participação dos obreiros, finanças e atividades da igreja;
+9. Gerenciamento de múltiplas unidades: Gerenciamento de múltiplas congregações, incluindo o acesso e gerenciamento de informações específicas de cada unidade;
+10. Segurança: Recursos de autenticação de usuários e proteção de dados sensíveis, incluindo níveis de acesso ee permissões;
 
 #### Os objetivos iniciais são:
 * Melhorar a qualidade dos atendimentos, evitando falhas operacionais;
