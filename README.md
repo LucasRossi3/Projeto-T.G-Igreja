@@ -3,7 +3,7 @@
 <img src="https://user-images.githubusercontent.com/99259327/187318644-d6e53541-e582-4f90-81be-aa24393a72b3.png" width="300" />
 </p>
 
-# <h1 align="center"> *Maestro:* **Projeto Engenharia de Software IIi** </h1>
+# <h1 align="center"> *Maestro:* **Projeto Engenharia de Software III** </h1>
 # <h1 align="center"> Membros do grupo: </h1>
 Evandro Rodrigues Tiburcio - 0030481921018
 
