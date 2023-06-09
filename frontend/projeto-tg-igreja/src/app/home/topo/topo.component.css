@@ -1,0 +1,22 @@
+.navbar-brand {
+  margin-right: 80px;
+}
+
+.logout-icon {
+  width: 24px;
+  color: #444;
+}
+
+.logout-link {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .logout-icon {
+    display: none;
+  }
+
+  .logout-link {
+    display: block;
+  }
+}

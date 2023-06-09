@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AutenticacaoService } from '../../shared/services/autenticacao.service';
 
 @Component({
   selector: 'app-topo',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class TopoComponent {
 
+  constructor(private autenticacaoService: AutenticacaoService) { }
+
+  public sair(): void {
+    this.autenticacaoService.sair();
+  }
 }

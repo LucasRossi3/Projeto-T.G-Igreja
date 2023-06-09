@@ -6,6 +6,13 @@
       "usuario": "rogerio",
       "senha": "MTIzNDU2",
       "id": 1
+    },
+    {
+      "email": "maria@gmail.com",
+      "nome": "Maria da Silva",
+      "usuario": "marias",
+      "senha": "MTIzNDU2",
+      "id": 2
     }
   ]
 }

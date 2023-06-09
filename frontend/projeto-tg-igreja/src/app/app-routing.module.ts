@@ -6,7 +6,12 @@ import { AutenticacaoGuardService } from './shared/services/autenticacao-guard.s
 
 const routes: Routes = [
   { path: '', component: AcessoComponent },
-  { path: 'home', component: HomeComponent, canActivate: [ AutenticacaoGuardService ]  }
+  { path: 'home', component: HomeComponent, canActivate: [ AutenticacaoGuardService ], 
+    children: [
+      // { path: '', component: ComoUsarComponent },
+      // { path: 'como-usar', component: ComoUsarComponent },
+      // { path: 'onde-fica', component: OndeFicaComponent }
+    ]}, 
   // { path: '**', component: PageNotFoundComponent }
 ];
 
