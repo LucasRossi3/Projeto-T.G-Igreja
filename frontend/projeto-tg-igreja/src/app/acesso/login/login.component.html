@@ -1,0 +1,46 @@
+<div class="shadow p-4">
+
+  <!-- Logo Maestro -->
+  <div class="card-title d-flex justify-content-center">
+    <img class="logo-maestro" src="../../../assets/maestro.png" alt="Logo Maestro">
+  </div>
+
+  <form [formGroup]="formulario" (ngSubmit)="autenticarUsuario()" class="d-flex flex-column">
+    <!-- E-mail -->
+    <div class="d-flex align-items-center mt-3 form-box">
+      <input 
+        type="email" 
+        class="form-control" 
+        placeholder="E-mail" 
+        formControlName="email"
+      />
+      <span *ngIf="formulario.get('email')?.valid && formulario.get('email')?.touched" class="icon-check-circle"></span>
+      <span *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched" class="icon-x-altx-alt"></span>
+    </div>
+
+    <!-- Senha -->
+    <div class="d-flex align-items-center mt-3 form-box">
+      <input 
+        type="password"
+        class="form-control" 
+        placeholder="Senha" 
+        formControlName="senha"
+      />
+      <span *ngIf="formulario.get('senha')?.valid && formulario.get('senha')?.touched" class="icon-check-circle"></span>
+      <span *ngIf="formulario.get('senha')?.invalid && formulario.get('senha')?.touched" class="icon-x-altx-alt"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-sm mt-3" [disabled]="formulario.status === 'INVALID'">Entrar</button>
+  </form>
+  
+  <!-- Mensagem de erro -->
+  <div *ngIf="errorMessage.length">
+    <hr />
+    <p class="small text-danger text-center">{{ errorMessage }}</p>
+  </div>
+</div>
+<br />
+
+<div class="p-3 d-flex justify-content-center">
+  <p>Não tem uma conta? <a href="#" class="card-link" (click)="exibirPainelCadastro()">Cadastre-se</a></p> 
+</div>

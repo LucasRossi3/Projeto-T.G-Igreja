@@ -1,0 +1,73 @@
+<div class="shadow p-4">
+  <form [formGroup]="formulario" (ngSubmit)="cadastrarUsuario()" class="d-flex flex-column">
+    
+    <!-- Email -->
+    <div class="d-flex align-items-center mt-3 form-box">
+      <input 
+        type="email" 
+        class="form-control" 
+        placeholder="E-mail" 
+        formControlName="email" 
+      />
+      <span *ngIf="formulario.get('email')?.valid && formulario.get('email')?.touched" class="icon-check-circle"></span>
+      <span *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched" class="icon-x-altx-alt"></span>
+    </div>
+
+    <!-- Nome -->
+    <div class="d-flex align-items-center mt-3 form-box">
+      <input 
+        type="text"
+        class="form-control" 
+        placeholder="Nome completo" 
+        formControlName="nome" 
+      />
+      <span *ngIf="formulario.get('nome')?.valid && formulario.get('nome')?.touched" class="icon-check-circle"></span>
+      <span *ngIf="formulario.get('nome')?.invalid && formulario.get('nome')?.touched" class="icon-x-altx-alt"></span>
+    </div>
+
+    <!-- Usuário -->
+    <div class="d-flex align-items-center mt-3 form-box">
+      <input 
+        type="text"
+        class="form-control" 
+        placeholder="Nome de usuário" 
+        formControlName="usuario" 
+      />
+      <span *ngIf="formulario.get('usuario')?.valid && formulario.get('usuario')?.touched" class="icon-check-circle"></span>
+      <span *ngIf="formulario.get('usuario')?.invalid && formulario.get('usuario')?.touched" class="icon-x-altx-alt"></span>
+    </div>
+
+    <!-- Senha -->
+    <div class="d-flex align-items-center mt-3 form-box">
+      <input 
+        type="password"
+        class="form-control" 
+        placeholder="Senha" 
+        formControlName="senha" 
+      />
+      <span *ngIf="formulario.get('senha')?.valid && formulario.get('senha')?.touched" class="icon-check-circle"></span>
+      <span *ngIf="formulario.get('senha')?.invalid && formulario.get('senha')?.touched" class="icon-x-altx-alt"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-sm mt-3" [disabled]="formulario.status === 'INVALID'">Cadastre-se</button>
+  </form>
+  
+  <!-- Mensagem de erro -->
+  <div *ngIf="errorMessage.length">
+    <hr />
+    <p class="small text-danger text-center">{{ errorMessage }}</p>
+  </div>
+
+  <hr />
+  <div class="d-flex justify-content-center fs-12">
+    <div style="margin: 10px 40px; text-align: center;">
+      Ao cadastrar-se, você concorda com nossos 
+      <span class="fw-bold">Termos</span> e <span class="fw-bold">Política de Privacidade</span>.
+    </div>
+  </div>
+</div>
+<br />
+
+<div class="p-3 d-flex justify-content-center">
+  <p>Tem uma conta? <a href="#" class="card-link" (click)="exibirPainelLogin()">Conecte-se</a></p> 
+</div>

@@ -1,0 +1,7 @@
+<div class="container">
+  <div [ngSwitch]="acesso">
+    <app-login *ngSwitchCase="'login'" (exibirPainel)="exibirPainel($event)"></app-login>
+    
+    <app-cadastro *ngSwitchCase="'cadastro'" (exibirPainel)="exibirPainel($event)"></app-cadastro>
+  </div>
+</div>

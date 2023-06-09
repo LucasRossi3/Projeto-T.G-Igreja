@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/fonts/style.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #444;
+}
+
+a {
+  text-decoration: none;
+}
+
+input, button {
+  height: 40px;
+}
+
+.form-box {
+  position: relative;
+}
+
+/* ===== VALIDATION INPUTS ========== */
+input.ng-valid.ng-touched {
+  border: 1px solid #198754;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid #dc3545;
+}
+
+/* ===== VALIDATION ICONS ========== */
+.icon-x-altx-alt, .icon-check-circle {
+  position: absolute;
+  right: 10px;
+}
+
+.icon-x-altx-alt {
+  color: #dc3545;
+}
+
+.icon-check-circle {
+  color: #198754;
+}
+
+.icon {
+  width: 24px;
+  cursor: pointer;
+}

@@ -1,0 +1,11 @@
+{
+  "usuarios": [
+    {
+      "email": "rogerio@gmail.com",
+      "nome": "Rogério Fodão",
+      "usuario": "rogerio",
+      "senha": "MTIzNDU2",
+      "id": 1
+    }
+  ]
+}
