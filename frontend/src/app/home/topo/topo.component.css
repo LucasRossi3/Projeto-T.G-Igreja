@@ -1,22 +1,25 @@
-.navbar-brand {
-  margin-right: 80px;
+.navbar-collapse {
+  justify-content: space-between;
 }
 
-.logout-icon {
-  width: 24px;
-  color: #444;
+.navbar-toggler {
+  border: none;
 }
 
-.logout-link {
-  display: none;
-}
-
-@media (max-width: 992px) {
-  .logout-icon {
-    display: none;
+@media (min-width: 992px) {
+  .navbar-brand {
+    margin-right: 6vw;
   }
+}
 
-  .logout-link {
-    display: block;
+@media (min-width: 1050px) {
+  .navbar-brand {
+    margin-right: 10vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-brand {
+    margin-right: 15vw;
   }
 }

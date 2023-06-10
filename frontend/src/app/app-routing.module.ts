@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AcessoComponent } from './acesso/acesso.component';
 import { HomeComponent } from './home/home.component';
 import { AutenticacaoGuardService } from './shared/services/autenticacao-guard.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: AcessoComponent },
@@ -11,8 +12,8 @@ const routes: Routes = [
       // { path: '', component: ComoUsarComponent },
       // { path: 'como-usar', component: ComoUsarComponent },
       // { path: 'onde-fica', component: OndeFicaComponent }
-    ]}, 
-  // { path: '**', component: PageNotFoundComponent }
+    ]},
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

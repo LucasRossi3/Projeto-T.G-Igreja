@@ -64,49 +64,32 @@ Rogério Ferreira de Souza - 0030482221007
 - Node.js
 - Angular
 - json-server
-<br>
-<br>
 
 # Projeto
-
+	
 Para executar o projeto:
-
 - Instalar o [Node.js](https://nodejs.org/en) e conferir a instalação:
 	- ```node -v```
 	- ```npm -v```
-<br>
-<br>
 	
 - Instalar o Angular CLI: 
 	- ```npm install -g @angular/cli```
-<br>
-<br>
 
 - Instalar o json-server: 
 	- ```npm install -g json-server```
-<br>
-<br>
 
 - Editar o PowerShell: 
 	- ```Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned```
-<br>
-<br>
 
 - Abrir um terminal no diretório onde serão salvos os arquivos e executar:
 	- ```git clone https://github.com/LucasRossi3/Projeto-T.G-Igreja.git```
-<br>
-<br>
 
 - Abrir um terminal no diretório backend e executar:
 	- ```json-server --watch db.json```
-<br>
-<br>
 
 - Abrir outro terminal no diretório frontend e executar:
 	- ```npm i```
 	- ```ng serve -o```
-<br>
-<br>
 
 <!-- # Tecnologias e ferramentas utilizadas para o desenvolvimento do sistema:
 
