@@ -4,8 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopoComponent } from './home/topo/topo.component';
-import { RodapeComponent } from './home/rodape/rodape.component';
+import { TopoComponent } from './topo/topo.component';
+import { RodapeComponent } from './rodape/rodape.component';
 import { AcessoComponent } from './acesso/acesso.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './acesso/login/login.component';
@@ -22,15 +22,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomeComponent,
     LoginComponent,
     CadastroComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

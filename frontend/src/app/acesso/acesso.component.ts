@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-acesso',
@@ -9,7 +9,7 @@ export class AcessoComponent {
   
   public acesso: string = 'login';
 
-  public exibirPainel(event: string): void {
-    this.acesso = event;
-  }
+  // public exibirPainel(event: string): void {
+  //   this.acesso = event;
+  // }
 }

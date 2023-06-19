@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/shared/model/usuario.model';
 import { AutenticacaoService } from 'src/app/shared/services/autenticacao.service';
 
 @Component({
@@ -9,8 +10,6 @@ import { AutenticacaoService } from 'src/app/shared/services/autenticacao.servic
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
-  @Output() public exibirPainel: EventEmitter<string> = new EventEmitter<string>();
 
   public formulario: FormGroup = new FormGroup({
     usuario: new FormControl(null, [ Validators.required, Validators.minLength(6) ]), 
@@ -22,23 +21,20 @@ export class LoginComponent {
   constructor(private autenticacaoService: AutenticacaoService, private router: Router) { }
 
   ngOnInit(): void {
-    if (this.autenticacaoService.autenticado())
+    if (this.autenticacaoService.autenticado()) {
       this.router.navigateByUrl('/home');
+    }
   }
 
   public autenticarUsuario(): void {
     this.autenticacaoService.autenticarUsuario(this.formulario.value.usuario, this.formulario.value.senha)
-      .then(resposta => {
-        console.log(resposta);
-        
-        if (resposta === undefined) {
-          this.errorMessage = 'Erro: usuário e/ou senha estão incorretos';
-        }
-      })
-      .catch((error: Error) => this.errorMessage = error.message);
+      .subscribe({
+        next: (usuario: Usuario) => console.log(usuario),
+        error: (err) => this.errorMessage = err
+      });
   }
 
-  public exibirPainelCadastro(): void {
-    this.exibirPainel.emit('cadastro');
-  }
+  // public exibirPainelCadastro(): void {
+  //   this.exibirPainel.emit('cadastro');
+  // }
 }
