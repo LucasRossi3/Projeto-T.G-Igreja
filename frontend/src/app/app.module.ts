@@ -1,34 +1,39 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopoComponent } from './topo/topo.component';
-import { RodapeComponent } from './rodape/rodape.component';
-import { AcessoComponent } from './acesso/acesso.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './acesso/login/login.component';
-import { CadastroComponent } from './acesso/cadastro/cadastro.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+import { HeaderComponent } from './core/components/header/header.component';
+import { CoreModule } from './core/core.module';
+import { AdministracaoModule } from './modules/administracao/administracao.module';
+import { AssistenciaSocialModule } from './modules/assistencia-social/assistencia-social.module';
+import { EstoqueModule } from './modules/estoque/estoque.module';
+import { HomeModule } from './modules/home/home.module';
+import { ReuniaoModule } from './modules/reuniao/reuniao.module';
+import { SharedModule } from './shared/shared.module';
+import { FooterComponent } from './modules/home/components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TopoComponent,
-    RodapeComponent,
-    AcessoComponent,
-    HomeComponent,
-    LoginComponent,
-    CadastroComponent,
-    PageNotFoundComponent,
+    AppComponent, 
+    HeaderComponent, 
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CoreModule,
+    SharedModule,
+    HomeModule,
+    ReuniaoModule,
+    AssistenciaSocialModule,
+    EstoqueModule,
+    AdministracaoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

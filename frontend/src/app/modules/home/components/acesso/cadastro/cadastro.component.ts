@@ -1,30 +1,43 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Usuario } from 'src/app/shared/model/usuario.model';
-import { AutenticacaoService } from 'src/app/shared/services/autenticacao.service';
+import { AutenticacaoService } from 'src/app/core/authentication/autenticacao.service';
+import { Usuario } from 'src/app/shared/models/usuario.model';
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  styleUrls: ['./cadastro.component.css'],
 })
 export class CadastroComponent {
-
   @Output() exibirPainel: EventEmitter<string> = new EventEmitter<string>();
 
   public formulario: FormGroup = new FormGroup({
-    email: new FormControl(null, [ Validators.required, Validators.minLength(6), Validators.email ]),
-    nome: new FormControl(null, [ Validators.required, Validators.minLength(6), Validators.maxLength(50) ]),
-    usuario: new FormControl(null, [ Validators.required, Validators.minLength(6), Validators.maxLength(20) ]),
-    senha: new FormControl(null, [ Validators.required, Validators.minLength(6) ])
+    email: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.email,
+    ]),
+    nome: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(50),
+    ]),
+    usuario: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.maxLength(20),
+    ]),
+    senha: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
 
   public errorMessage: string = '';
 
-  constructor(private autenticacaoService: AutenticacaoService) { }
+  constructor(private autenticacaoService: AutenticacaoService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public cadastrarUsuario(): void {
     let usuario: Usuario = this.formulario.value;
@@ -34,7 +47,7 @@ export class CadastroComponent {
     //   next: (usuario: Usuario) => {
     //     this.exibirPainelLogin();
     //     console.log(usuario);
-    //   }, 
+    //   },
     //   error: error => this.errorMessage = error.message
     // });
   }

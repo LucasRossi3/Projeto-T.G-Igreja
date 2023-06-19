@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopoComponent } from './topo.component';
+import { HeaderComponent } from './header.component';
 
-describe('TopoComponent', () => {
-  let component: TopoComponent;
-  let fixture: ComponentFixture<TopoComponent>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TopoComponent]
+      declarations: [HeaderComponent],
     });
-    fixture = TestBed.createComponent(TopoComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

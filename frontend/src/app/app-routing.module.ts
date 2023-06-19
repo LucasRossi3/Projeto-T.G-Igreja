@@ -1,23 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AcessoComponent } from './acesso/acesso.component';
-import { HomeComponent } from './home/home.component';
-import { AutenticacaoGuardService } from './shared/services/autenticacao-guard.service';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { AutenticacaoGuardService } from './core/guards/autenticacao-guard.service';
+import { AcessoComponent } from './modules/home/components/acesso/acesso.component';
+import { HomeComponent } from './modules/home/components/home/home.component';
 
 const routes: Routes = [
   { path: '', component: AcessoComponent },
-  { path: 'home', component: HomeComponent, canActivate: [ AutenticacaoGuardService ], 
-    children: [
-      // { path: '', component: ComoUsarComponent },
-      // { path: 'como-usar', component: ComoUsarComponent },
-      // { path: 'onde-fica', component: OndeFicaComponent }
-    ]},
+  { path: 'home', component: HomeComponent, canActivate: [AutenticacaoGuardService] },
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

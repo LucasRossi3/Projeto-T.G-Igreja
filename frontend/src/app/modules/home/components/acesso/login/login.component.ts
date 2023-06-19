@@ -1,24 +1,29 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/shared/model/usuario.model';
-import { AutenticacaoService } from 'src/app/shared/services/autenticacao.service';
+import { AutenticacaoService } from 'src/app/core/authentication/autenticacao.service';
+import { Usuario } from 'src/app/shared/models/usuario.model';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-
   public formulario: FormGroup = new FormGroup({
-    usuario: new FormControl(null, [ Validators.required, Validators.minLength(6) ]), 
-    senha: new FormControl(null, [ Validators.required, Validators.minLength(6) ])
+    usuario: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+    senha: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
 
   public errorMessage: string = '';
 
-  constructor(private autenticacaoService: AutenticacaoService, private router: Router) { }
+  constructor(private autenticacaoService: AutenticacaoService, private router: Router) {}
 
   ngOnInit(): void {
     if (this.autenticacaoService.autenticado()) {
@@ -27,10 +32,14 @@ export class LoginComponent {
   }
 
   public autenticarUsuario(): void {
-    this.autenticacaoService.autenticarUsuario(this.formulario.value.usuario, this.formulario.value.senha)
+    this.autenticacaoService
+      .autenticarUsuario(
+        this.formulario.value.usuario,
+        this.formulario.value.senha
+      )
       .subscribe({
         next: (usuario: Usuario) => console.log(usuario),
-        error: (err) => this.errorMessage = err
+        error: (err) => (this.errorMessage = err),
       });
   }
 
