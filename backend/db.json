@@ -1,18 +1,48 @@
 {
   "usuarios": [
     {
-      "email": "rogerio@gmail.com",
-      "nome": "Rogério Fodão",
-      "usuario": "rogerio",
-      "senha": "MTIzNDU2",
-      "id": 1
+      "idUsuario": 1,
+      "pessoa": {
+        "idPessoa": 1,
+        "nome": "João Silva",
+        "cpf": 12345678900,
+        "rg": 999999999,
+        "sexo": "M",
+        "email": "joao.silva@example.com",
+        "dd": 11,
+        "celular": 923456789,
+        "endereco": "Rua Principal",
+        "numEndereco": 123,
+        "bairro": "Centro",
+        "complemento": "Ap. 102",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "cep": 12345678
+      },
+      "usuario": "joao.silva",
+      "senha": "123456"
     },
     {
-      "email": "maria@gmail.com",
-      "nome": "Maria da Silva",
-      "usuario": "marias",
-      "senha": "MTIzNDU2",
-      "id": 2
+      "idUsuario": 2,
+      "pessoa": {
+        "idPessoa": 2,
+        "nome": "Maria Santos",
+        "cpf": 98765432100,
+        "rg": 888888888,
+        "sexo": "F",
+        "email": "maria.santos@example.com",
+        "dd": 11,
+        "celular": 987654321,
+        "endereco": "Avenida das Flores",
+        "numEndereco": 456,
+        "bairro": "Vila Nova",
+        "complemento": "",
+        "cidade": "Rio de Janeiro",
+        "uf": "RJ",
+        "cep": 98765432
+      },
+      "usuario": "maria.santos",
+      "senha": "123456"
     }
   ]
 }

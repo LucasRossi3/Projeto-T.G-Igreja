@@ -68,7 +68,7 @@ CREATE TABLE tb_funcao (
 CREATE TABLE tb_usuario (
   id_usuario NUMBER NOT NULL,
   id_pessoa NUMBER,
-  nome VARCHAR2(60),
+  usuario VARCHAR2(60),
   senha VARCHAR2(60)
 );
 

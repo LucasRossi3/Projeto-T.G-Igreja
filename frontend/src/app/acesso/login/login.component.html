@@ -1,46 +1,111 @@
 <div class="shadow p-4">
-
   <!-- Logo Maestro -->
   <div class="card-title d-flex justify-content-center">
-    <img class="logo-maestro" src="../../../assets/maestro.png" alt="Logo Maestro">
+    <img
+      class="logo-maestro"
+      src="../../../assets/maestro.png"
+      alt="Logo Maestro"
+    />
   </div>
 
-  <form [formGroup]="formulario" (ngSubmit)="autenticarUsuario()" class="d-flex flex-column">
-    <!-- E-mail -->
+  <form
+    [formGroup]="formulario"
+    (ngSubmit)="autenticarUsuario()"
+    class="d-flex flex-column"
+  >
+    <!-- Usuário -->
     <div class="d-flex align-items-center mt-3 form-box">
-      <input 
-        type="email" 
-        class="form-control" 
-        placeholder="E-mail" 
-        formControlName="email"
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Usuário"
+        formControlName="usuario"
       />
-      <span *ngIf="formulario.get('email')?.valid && formulario.get('email')?.touched" class="icon-check-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#198754" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+      <span
+        *ngIf="formulario.get('usuario')?.valid && formulario.get('usuario')?.touched"
+        class="icon-check-circle"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#198754"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"
+          ></path>
+        </svg>
       </span>
-      <span *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched" class="icon-x-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#dc3545" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm37.66,130.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
+      <span
+        *ngIf="formulario.get('usuario')?.invalid && formulario.get('usuario')?.touched"
+        class="icon-x-circle"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#dc3545"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm37.66,130.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+          ></path>
+        </svg>
       </span>
     </div>
 
     <!-- Senha -->
     <div class="d-flex align-items-center mt-3 form-box">
-      <input 
+      <input
         type="password"
-        class="form-control" 
-        placeholder="Senha" 
+        class="form-control"
+        placeholder="Senha"
         formControlName="senha"
       />
-      <span *ngIf="formulario.get('senha')?.valid && formulario.get('senha')?.touched" class="icon-check-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#198754" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+      <span
+        *ngIf="formulario.get('senha')?.valid && formulario.get('senha')?.touched"
+        class="icon-check-circle"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#198754"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"
+          ></path>
+        </svg>
       </span>
-      <span *ngIf="formulario.get('senha')?.invalid && formulario.get('senha')?.touched" class="icon-x-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#dc3545" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm37.66,130.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
+      <span
+        *ngIf="formulario.get('senha')?.invalid && formulario.get('senha')?.touched"
+        class="icon-x-circle"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#dc3545"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm37.66,130.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+          ></path>
+        </svg>
       </span>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-sm mt-3" [disabled]="formulario.status === 'INVALID'">Entrar</button>
+    <button
+      type="submit"
+      class="btn btn-primary btn-sm mt-3"
+      [disabled]="formulario.status === 'INVALID'"
+    >
+      Entrar
+    </button>
   </form>
-  
+
   <!-- Mensagem de erro -->
   <div *ngIf="errorMessage.length">
     <hr />
@@ -49,6 +114,6 @@
 </div>
 <br />
 
-<div class="p-3 d-flex justify-content-center">
+<!-- <div class="p-3 d-flex justify-content-center">
   <p>Não tem uma conta? <a href="#" class="card-link" (click)="exibirPainelCadastro()">Cadastre-se</a></p> 
-</div>
+</div> -->

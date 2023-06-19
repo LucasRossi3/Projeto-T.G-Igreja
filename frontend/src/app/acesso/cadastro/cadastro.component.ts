@@ -30,13 +30,13 @@ export class CadastroComponent {
     let usuario: Usuario = this.formulario.value;
     usuario.senha = btoa(usuario.senha);
 
-    this.autenticacaoService.cadastrarUsuario(usuario).subscribe({
-      next: (usuario: Usuario) => {
-        this.exibirPainelLogin();
-        console.log(usuario);
-      }, 
-      error: error => this.errorMessage = error.message
-    });
+    // this.autenticacaoService.cadastrarUsuario(usuario).subscribe({
+    //   next: (usuario: Usuario) => {
+    //     this.exibirPainelLogin();
+    //     console.log(usuario);
+    //   }, 
+    //   error: error => this.errorMessage = error.message
+    // });
   }
 
   public exibirPainelLogin(): void {

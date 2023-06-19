@@ -1,6 +1,8 @@
+import { Pessoa } from "./pessoa.model";
+
 export interface Usuario {
-  email: string;
-  nome: string;
+  idUsuario: number,
+  pessoa: Pessoa,
   usuario: string;
   senha: string;
 }

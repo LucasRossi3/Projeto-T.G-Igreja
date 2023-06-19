@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/shared/model/usuario.model';
 import { AutenticacaoService } from 'src/app/shared/services/autenticacao.service';
 
 @Component({
@@ -14,7 +13,7 @@ export class LoginComponent {
   @Output() public exibirPainel: EventEmitter<string> = new EventEmitter<string>();
 
   public formulario: FormGroup = new FormGroup({
-    email: new FormControl(null, [ Validators.required, Validators.minLength(6), Validators.email ]), 
+    usuario: new FormControl(null, [ Validators.required, Validators.minLength(6) ]), 
     senha: new FormControl(null, [ Validators.required, Validators.minLength(6) ])
   });
 
@@ -28,8 +27,10 @@ export class LoginComponent {
   }
 
   public autenticarUsuario(): void {
-    this.autenticacaoService.autenticarUsuario(this.formulario.value.email, this.formulario.value.senha)
+    this.autenticacaoService.autenticarUsuario(this.formulario.value.usuario, this.formulario.value.senha)
       .then(resposta => {
+        console.log(resposta);
+        
         if (resposta === undefined) {
           this.errorMessage = 'Erro: usuário e/ou senha estão incorretos';
         }
