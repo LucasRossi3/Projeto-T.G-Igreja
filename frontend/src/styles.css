@@ -49,3 +49,7 @@ input.ng-invalid.ng-touched {
   position: absolute;
   right: 10px;
 }
+
+tbody tr {
+  cursor: pointer;
+}
