@@ -1,0 +1,10 @@
+D7LVkY8VlIZgksYI - root banco
+NLvSuxLDpf4YKDZ5 - maestro
+
+mysql
+create database maestro;
+CREATE USER maestro@% IDENTIFIED BY 'NLvSuxLDpf4YKDZ5';
+GRANT ALL PRIVILEGES ON maestro.*  TO 'maestro'@'%';
+FLUSH PRIVILEGES;
+QUIT
+
