@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subject, retry, switchMap } from 'rxjs';
+import { Observable, Subject, map, retry, switchMap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -27,7 +27,8 @@ export class AutenticacaoService {
   public autenticarUsuario(usuario: string, senha: string): Observable<any> {
     return this.httpClient.get<any>(`${this.usuariosUrl}?usuario=${usuario}&senha=${senha}`)
       .pipe(
-        switchMap((res: any) => {
+        retry(3),
+        map(res => {
           if (res.length) {
             this.idToken = btoa(usuario + senha);
             localStorage.setItem('idToken', this.idToken);
@@ -39,7 +40,6 @@ export class AutenticacaoService {
 
           throw 'Erro: usuário e/ou senha estão incorretos';
         }),
-        retry(3)
       );
   }
 

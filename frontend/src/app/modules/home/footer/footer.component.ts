@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AutenticacaoService } from '../../../../core/authentication/autenticacao.service';
+import { AutenticacaoService } from 'src/app/core/authentication/autenticacao.service';
 
 @Component({
   selector: 'app-footer',

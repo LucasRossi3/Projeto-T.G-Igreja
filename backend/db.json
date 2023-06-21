@@ -5,8 +5,8 @@
       "pessoa": {
         "idPessoa": 1,
         "nome": "João Silva",
-        "cpf": 12345678900,
-        "rg": 999999999,
+        "cpf": 93930876019,
+        "rg": 114801629,
         "sexo": "M",
         "email": "joao.silva@example.com",
         "dd": 11,
@@ -27,8 +27,8 @@
       "pessoa": {
         "idPessoa": 2,
         "nome": "Maria Santos",
-        "cpf": 98765432100,
-        "rg": 888888888,
+        "cpf": 80916794083,
+        "rg": 372542463,
         "sexo": "F",
         "email": "maria.santos@example.com",
         "dd": 11,
@@ -43,6 +43,42 @@
       },
       "usuario": "maria.santos",
       "senha": "123456"
+    }
+  ],
+  "pessoas": [
+    {
+      "idPessoa": 1,
+      "nome": "João Silva",
+      "cpf": 93930876019,
+      "rg": 114801629,
+      "sexo": "M",
+      "email": "joao.silva@example.com",
+      "dd": 11,
+      "celular": 923456789,
+      "endereco": "Rua Principal",
+      "numEndereco": 123,
+      "bairro": "Centro",
+      "complemento": "Ap. 102",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "cep": 12345678
+    },
+    {
+      "idPessoa": 2,
+      "nome": "Maria Santos",
+      "cpf": 80916794083,
+      "rg": 372542463,
+      "sexo": "F",
+      "email": "maria.santos@example.com",
+      "dd": 11,
+      "celular": 987654321,
+      "endereco": "Avenida das Flores",
+      "numEndereco": 456,
+      "bairro": "Vila Nova",
+      "complemento": "",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "cep": 98765432
     }
   ]
 }

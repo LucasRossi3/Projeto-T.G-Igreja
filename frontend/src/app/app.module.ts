@@ -14,12 +14,12 @@ import { EstoqueModule } from './modules/estoque/estoque.module';
 import { HomeModule } from './modules/home/home.module';
 import { ReuniaoModule } from './modules/reuniao/reuniao.module';
 import { SharedModule } from './shared/shared.module';
-import { FooterComponent } from './modules/home/components/footer/footer.component';
+import { FooterComponent } from './modules/home/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    HeaderComponent, 
+    AppComponent,
+    HeaderComponent,
     FooterComponent
   ],
   imports: [

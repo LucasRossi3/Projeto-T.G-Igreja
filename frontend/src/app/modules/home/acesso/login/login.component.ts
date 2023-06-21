@@ -32,14 +32,10 @@ export class LoginComponent {
   }
 
   public autenticarUsuario(): void {
-    this.autenticacaoService
-      .autenticarUsuario(
-        this.formulario.value.usuario,
-        this.formulario.value.senha
-      )
+    this.autenticacaoService.autenticarUsuario(this.formulario.value.usuario, this.formulario.value.senha)
       .subscribe({
         next: (usuario: Usuario) => console.log(usuario),
-        error: (err) => (this.errorMessage = err),
+        error: err => this.errorMessage = err
       });
   }
 
