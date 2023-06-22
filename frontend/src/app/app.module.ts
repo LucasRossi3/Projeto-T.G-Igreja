@@ -11,10 +11,10 @@ import { CoreModule } from './core/core.module';
 import { AdministracaoModule } from './modules/administracao/administracao.module';
 import { AssistenciaSocialModule } from './modules/assistencia-social/assistencia-social.module';
 import { EstoqueModule } from './modules/estoque/estoque.module';
+import { FooterComponent } from './modules/home/footer/footer.component';
 import { HomeModule } from './modules/home/home.module';
 import { ReuniaoModule } from './modules/reuniao/reuniao.module';
 import { SharedModule } from './shared/shared.module';
-import { FooterComponent } from './modules/home/footer/footer.component';
 
 @NgModule({
   declarations: [

@@ -391,8 +391,8 @@ INSERT INTO tb_obreiro VALUES (seq_tb_obreiro_id.NEXTVAL, 7, 5);
 -- Inserts tb_congregacao
 INSERT INTO tb_congregacao VALUES (seq_tb_congregacao_id.NEXTVAL, 1, 1, 'Congregação Central', 'Avenida Principal', 100, 'Centro', 'Sala 101', 'São Paulo', 'SP', '12345678', TO_DATE('2002-07-21', 'YYYY-MM-DD'));
 INSERT INTO tb_congregacao VALUES (seq_tb_congregacao_id.NEXTVAL, 2, 2, 'Congregação do Rio', 'Rua das Flores', 200, 'Copacabana', NULL, 'Rio de Janeiro', 'RJ', '98765432', TO_DATE('2008-11-09', 'YYYY-MM-DD'));
-INSERT INTO tb_congregacao VALUES (seq_tb_congregacao_id.NEXTVAL, 1, 3, 'Congregação da Paz', 'Avenida do Sol', 300, 'Jardim América', 'Casa 5', 'São Paulo', 'SP', '54321876', TO_DATE('2022-03-25', 'YYYY-MM-DD'));
-INSERT INTO tb_congregacao VALUES (seq_tb_congregacao_id.NEXTVAL, 2, 4, 'Congregação da Esperança', 'Rua dos Coqueiros', 400, 'Barra da Tijuca', 'Ap. 201', 'Rio de Janeiro', 'RJ', '12345678', TO_DATE('1988-05-10', 'YYYY-MM-DD'));
+INSERT INTO tb_congregacao VALUES (seq_tb_congregacao_id.NEXTVAL, 1, 3, 'Congregação da Paz', 'Avenida do Sol', 300, 'Jardim América', NULL, 'São Paulo', 'SP', '54321876', TO_DATE('2022-03-25', 'YYYY-MM-DD'));
+INSERT INTO tb_congregacao VALUES (seq_tb_congregacao_id.NEXTVAL, 2, 4, 'Congregação da Esperança', 'Rua dos Coqueiros', 400, 'Barra da Tijuca', NULL, 'Rio de Janeiro', 'RJ', '12345678', TO_DATE('1988-05-10', 'YYYY-MM-DD'));
 INSERT INTO tb_congregacao VALUES (seq_tb_congregacao_id.NEXTVAL, 2, 5, 'Congregação do Amor', 'Rua Principal', 500, 'Vila Nova', NULL, 'Rio de Janeiro', 'RJ', '98765432', TO_DATE('2015-10-12', 'YYYY-MM-DD'));
 
 -- Inserts tb_membro
@@ -400,9 +400,9 @@ INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 1, 2);
 INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 2, 2);
 INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 4, 4);
 INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 5, 5);
-INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 8, 1);
-INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 9, 3);
-INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 10, 3);
+INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 3, 1);
+INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 6, 3);
+INSERT INTO tb_membro VALUES (seq_tb_membro_id.NEXTVAL, 7, 3);
 
 -- Inserts tb_dizimo
 INSERT INTO tb_dizimo VALUES (seq_tb_dizimo_id.NEXTVAL, 1, 1, TO_DATE('2023-05-01', 'YYYY-MM-DD'), 'Dinheiro', 100.00);

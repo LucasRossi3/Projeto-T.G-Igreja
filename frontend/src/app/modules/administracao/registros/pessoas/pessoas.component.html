@@ -5,6 +5,7 @@
       <input type="text" class="form-control" #cpf maxlength="11" />
     </div>
     <div class="col-md-8 error">{{ errorMessage }}</div>
+
     <div class="col-12" class="d-flex gap-3 mt-3" role="group" aria-label="Button group">
       <button type="button" class="btn btn-success" (click)="pesquisar(cpf.value)">Pesquisar</button>
       <button type="button" class="btn btn-secondary" (click)="limpar()">Limpar</button>

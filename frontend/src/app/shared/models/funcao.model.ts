@@ -1,4 +1,4 @@
 export interface Funcao {
-  idFuncao: number,
+  id: number,
   descricaoFuncao: string
 }

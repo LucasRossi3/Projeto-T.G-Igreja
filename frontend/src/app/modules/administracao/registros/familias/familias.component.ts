@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./familias.component.css']
 })
 export class FamiliasComponent {
-
+  
 }

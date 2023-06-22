@@ -76,8 +76,5 @@ public class PessoaController {
 		p.setUf(pessoa.getUf());
 		p.setCep(pessoa.getCep());
 		System.out.println(p.toString());
-		
 	}
-	
-
 }

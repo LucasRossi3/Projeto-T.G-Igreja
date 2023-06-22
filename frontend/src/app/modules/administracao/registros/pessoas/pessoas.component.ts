@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Output, ViewChild, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Pessoa } from 'src/app/shared/models/pessoa.model';
 import { PessoasService } from './../../../../core/services/pessoas.service';

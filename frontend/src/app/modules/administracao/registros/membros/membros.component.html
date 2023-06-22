@@ -1,0 +1,94 @@
+<div class="container mt-3">
+  <div class="row pesquisa">
+    <label for="congregacoes" class="form-label">Filtrar membros</label>
+    <select #select id="congregacoes" class="form-select" (change)="filtrar(select.value)">
+      <option selected value=""></option>
+      <option *ngFor="let congregacao of congregacoes" value="{{ congregacao.id }}">{{ congregacao.nome }}</option>
+    </select>
+
+    <div class="col-12" class="mt-3" role="group" aria-label="Button group">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" (click)="novo()">
+        Novo cadastro
+      </button>
+    </div>
+  </div>
+
+  <table class="table table-hover mt-5">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Congregação</th>
+        <th scope="col">Sede</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let membro of membros" data-bs-toggle="modal" data-bs-target="#modal" (click)="abrirModal(membro)">
+        <th scope="row">{{ membro.id }}</th>
+        <td>{{ membro.pessoa.nome }}</td>
+        <td>{{ membro.congregacao.nome }}</td>
+        <td>{{ membro.congregacao.sede.descricaoSede }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalLabel">Cadastro</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form class="row g-3" [formGroup]="formulario" novalidate>
+          <div class="col-6">
+            <label for="pessoa" class="form-label">Pessoa</label>
+            <select id="pessoas" class="form-select" formControlName="pessoa">
+              <option selected value=""></option>
+              <option *ngFor="let pessoa of pessoas" value="{{ pessoa.id }}">{{ pessoa.nome }}</option>
+            </select>
+          </div>
+          <div class="col-6">
+            <label for="congregacao" class="form-label">Congregação</label>
+            <select #select id="congregacoes" class="form-select" formControlName="congregacao">
+              <option selected value=""></option>
+              <option *ngFor="let congregacao of congregacoes" value="{{ congregacao.id }}">{{ congregacao.nome }}</option>
+            </select>
+          </div>
+          <div class="col-6"></div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" [disabled]="!formulario.valid" (click)="salvar()">Salvar</button>
+        <button type="button" class="btn btn-warning" #btnEditar [hidden]="novoCadastro" (click)="editar()">Editar</button>
+        <button type="button" class="btn btn-danger" #btnRemover [hidden]="novoCadastro" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Remover</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Static Backdrop -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Remover cadastro</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Você tem certeza que quer remover este cadastro?</p>
+        <p>Esta ação não poderá ser desfeita!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="remover()">Remover</button>
+      </div>
+    </div>
+  </div>
+</div>

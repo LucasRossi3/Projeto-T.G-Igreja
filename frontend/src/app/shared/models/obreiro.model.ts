@@ -2,7 +2,7 @@ import { Funcao } from "./funcao.model";
 import { Pessoa } from "./pessoa.model";
 
 export interface Obreiro {
-  idObreiro: number,
+  id: number,
   pessoa: Pessoa,
   funcao: Funcao
 }
