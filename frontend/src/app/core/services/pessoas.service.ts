@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map, retry, switchMap } from 'rxjs';
+import { Observable, map, retry } from 'rxjs';
 import { Pessoa } from 'src/app/shared/models/pessoa.model';
 import { environment } from 'src/environments/environment';
 
@@ -26,7 +26,7 @@ export class PessoasService {
     return this.httpClient.get<Pessoa[]>(`${this.pessoasUrl}`);
   }
 
-  public getPessoaByCpf(cpf: string): Observable<any> {
+  public getPessoaByCpf(cpf: number): Observable<any> {
     return this.httpClient.get<any>(`${this.pessoasUrl}?cpf=${cpf}`)
       .pipe(
         retry(3),
@@ -35,12 +35,12 @@ export class PessoasService {
             return res[0];
           }
 
-          throw 'Erro: Pessoa não registrada';
+          throw `Erro: Pessoa não registrada (CPF: ${cpf})`;
         })
       );
   }
 
-  public getPessoaById(id: string): Observable<any> {
+  public getPessoaById(id: number): Observable<any> {
     return this.httpClient.get<any>(`${this.pessoasUrl}?id=${id}`)
       .pipe(
         retry(3),
@@ -56,11 +56,11 @@ export class PessoasService {
 
   // Update
   public atualizarPessoa(id: number, pessoa: Pessoa): Observable<any> {
-    return this.httpClient.put<any>(`${this.pessoasUrl}?id=${id}`, pessoa);
+    return this.httpClient.put<any>(`${this.pessoasUrl}/${id}`, pessoa);
   }
 
   // Delete
   public removerPessoa(id: number): Observable<any> {
-    return this.httpClient.delete<any>(`${this.pessoasUrl}?id=${id}`);
+    return this.httpClient.delete<any>(`${this.pessoasUrl}/${id}`);
   }
 }

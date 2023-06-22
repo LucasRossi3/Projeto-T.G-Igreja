@@ -1,16 +1,16 @@
 {
   "usuarios": [
     {
-      "idUsuario": 1,
+      "id": 1,
       "pessoa": {
-        "idPessoa": 1,
+        "id": 1,
         "nome": "João Silva",
         "cpf": 93930876019,
         "rg": 114801629,
         "sexo": "M",
         "email": "joao.silva@example.com",
-        "dd": 11,
-        "celular": 923456789,
+        "ddd": 11,
+        "telefone": 923456789,
         "endereco": "Rua Principal",
         "numEndereco": 123,
         "bairro": "Centro",
@@ -23,16 +23,16 @@
       "senha": "123456"
     },
     {
-      "idUsuario": 2,
+      "id": 2,
       "pessoa": {
-        "idPessoa": 2,
+        "id": 2,
         "nome": "Maria Santos",
         "cpf": 80916794083,
         "rg": 372542463,
         "sexo": "F",
         "email": "maria.santos@example.com",
-        "dd": 11,
-        "celular": 987654321,
+        "ddd": 11,
+        "telefone": 987654321,
         "endereco": "Avenida das Flores",
         "numEndereco": 456,
         "bairro": "Vila Nova",
@@ -47,14 +47,14 @@
   ],
   "pessoas": [
     {
-      "idPessoa": 1,
+      "id": 1,
       "nome": "João Silva",
       "cpf": 93930876019,
       "rg": 114801629,
       "sexo": "M",
       "email": "joao.silva@example.com",
-      "dd": 11,
-      "celular": 923456789,
+      "ddd": 11,
+      "telefone": 923456789,
       "endereco": "Rua Principal",
       "numEndereco": 123,
       "bairro": "Centro",
@@ -64,14 +64,14 @@
       "cep": 12345678
     },
     {
-      "idPessoa": 2,
+      "id": 2,
       "nome": "Maria Santos",
       "cpf": 80916794083,
       "rg": 372542463,
       "sexo": "F",
       "email": "maria.santos@example.com",
-      "dd": 11,
-      "celular": 987654321,
+      "ddd": 11,
+      "telefone": 987654321,
       "endereco": "Avenida das Flores",
       "numEndereco": 456,
       "bairro": "Vila Nova",
@@ -79,6 +79,40 @@
       "cidade": "Rio de Janeiro",
       "uf": "RJ",
       "cep": 98765432
+    },
+    {
+      "id": 3,
+      "nome": "José Oliveira",
+      "email": "jose.oliveira@example.com",
+      "cpf": "11122233300",
+      "rg": "777777777",
+      "sexo": "M",
+      "ddd": "11",
+      "telefone": "911222333",
+      "endereco": "Rua dos Girassóis",
+      "numEndereco": "789",
+      "bairro": "Jardim América",
+      "complemento": "Casa 5",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "cep": "11111222"
+    },
+    {
+      "id": 4,
+      "nome": "Ana Souza",
+      "email": "ana.souza@example.com",
+      "cpf": "44455566600",
+      "rg": "666666666",
+      "sexo": "F",
+      "ddd": "11",
+      "telefone": "944555666",
+      "endereco": "Avenida Atlântica",
+      "numEndereco": "987",
+      "bairro": "Vila Nova",
+      "complemento": "Ap 501",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "cep": "44444555"
     }
   ]
 }

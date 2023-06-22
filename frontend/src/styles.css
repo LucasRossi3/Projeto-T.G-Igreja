@@ -44,6 +44,14 @@ input.ng-invalid.ng-touched {
   border: 1px solid #dc3545;
 }
 
+select.ng-valid.ng-touched {
+  border: 1px solid #198754;
+}
+
+select.ng-invalid.ng-touched {
+  border: 1px solid #dc3545;
+}
+
 /* ===== VALIDATION ICONS ========== */
 .icon-x-circle, .icon-check-circle {
   position: absolute;

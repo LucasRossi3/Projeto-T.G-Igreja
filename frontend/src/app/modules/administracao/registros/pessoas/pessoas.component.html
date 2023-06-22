@@ -2,17 +2,14 @@
   <div class="row pesquisa">
     <div class="col-md-4">
       <label class="form-label">CPF</label>
-      <input type="text" class="form-control" #cpf (keyup)="onKey(cpf.value)" [value]="cpfInput" maxlength="11" />
+      <input type="text" class="form-control" #cpf maxlength="11" />
     </div>
-    <div class="col-md-8">
-      <label class="form-label">Nome</label>
-      <input type="text" class="form-control" [value]="nomeInput" disabled />
-    </div>
+    <div class="col-md-8 error">{{ errorMessage }}</div>
     <div class="col-12" class="d-flex gap-3 mt-3" role="group" aria-label="Button group">
-      <button type="button" class="btn btn-success" (click)="pesquisar()">Pesquisar</button>
+      <button type="button" class="btn btn-success" (click)="pesquisar(cpf.value)">Pesquisar</button>
       <button type="button" class="btn btn-secondary" (click)="limpar()">Limpar</button>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" (click)="novo()">
         Novo cadastro
       </button>
     </div>
@@ -28,8 +25,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let pessoa of pessoas">
-        <th scope="row">{{ pessoa.idPessoa }}</th>
+      <tr *ngFor="let pessoa of pessoas" data-bs-toggle="modal" data-bs-target="#modal" (click)="abrirModal(pessoa)">
+        <th scope="row">{{ pessoa.id }}</th>
         <td>{{ pessoa.nome }}</td>
         <td>{{ pessoa.cpf | cpf}}</td>
         <td>{{ pessoa.email }}</td>
@@ -39,13 +36,14 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Novo cadastro</h1>
+        <h1 class="modal-title fs-5" id="modalLabel">Cadastro</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
       <div class="modal-body">
         <form class="row g-3" [formGroup]="formulario" novalidate>
           <div class="col-6">
@@ -59,28 +57,27 @@
 
           <div class="col-4">
             <label for="cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control" id="cpf" formControlName="cpf" />
+            <input type="text" class="form-control" id="cpf" formControlName="cpf" maxlength="11" />
           </div>
           <div class="col-4">
             <label for="rg" class="form-label">RG</label>
-            <input type="text" class="form-control" id="rg" formControlName="rg" />
+            <input type="text" class="form-control" id="rg" formControlName="rg" maxlength="9" />
           </div>
           <div class="col-4">
             <label for="sexo" class="form-label">Sexo</label>
             <select id="sexo" class="form-select" formControlName="sexo">
-              <option selected>...</option>
-              <option>Masculino</option>
-              <option>Feminino</option>
+              <option selected value="M">Masculino</option>
+              <option value="F">Feminino</option>
             </select>
           </div>
 
           <div class="col-1">
             <label for="ddd" class="form-label">DDD</label>
-            <input type="text" class="form-control" id="ddd" formControlName="ddd" />
+            <input type="text" class="form-control" id="ddd" formControlName="ddd" maxlength="2" />
           </div>
           <div class="col-4">
             <label for="telefone" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="telefone" formControlName="telefone" />
+            <input type="tel" class="form-control" id="telefone" formControlName="telefone" maxlength="9" />
           </div>
           <div class="col-7"></div>
 
@@ -90,7 +87,7 @@
           </div>
           <div class="col-2">
             <label for="numero" class="form-label">Número</label>
-            <input type="text" class="form-control" id="numero" formControlName="numero" />
+            <input type="text" class="form-control" id="numero" formControlName="numEndereco" maxlength="5" />
           </div>
           <div class="col-4">
             <label for="bairro" class="form-label">Bairro</label>
@@ -105,24 +102,44 @@
 
           <div class="col-md-6">
             <label for="cidade" class="form-label">Cidade</label>
-            <input type="text" class="form-control" id="cidade" formControlName="cidade">
+            <input type="text" class="form-control" id="cidade" formControlName="cidade" />
           </div>
           <div class="col-md-2">
             <label for="uf" class="form-label">UF</label>
-            <input type="text" class="form-control" id="uf" formControlName="uf" />
+            <input type="text" class="form-control" id="uf" formControlName="uf" maxlength="2" />
           </div>
           <div class="col-md-2">
             <label for="cep" class="form-label">CEP</label>
-            <input type="text" class="form-control" id="cep" formControlName="cep" />
+            <input type="text" class="form-control" id="cep" formControlName="cep" maxlength="8" />
           </div>
         </form>
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" disabled>Salvar</button>
-        <button type="button" class="btn btn-warning" disabled>Editar</button>
-        <button type="button" class="btn btn-danger" disabled>Remover</button>
+        <button type="button" class="btn btn-success"  data-bs-dismiss="modal" [disabled]="!formulario.valid" (click)="salvar()">Salvar</button>
+        <button type="button" class="btn btn-warning" #btnEditar [hidden]="novoCadastro" (click)="editar()">Editar</button>
+        <button type="button" class="btn btn-danger" #btnRemover [hidden]="novoCadastro" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Remover</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Static Backdrop -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Remover cadastro</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Você tem certeza que quer remover este cadastro?</p>
+        <p>Esta ação não poderá ser desfeita!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="remover()">Remover</button>
       </div>
     </div>
   </div>
