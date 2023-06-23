@@ -1,78 +1,66 @@
 package br.com.projetomaestro.model;
 import java.io.Serializable;
-import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Data
 @Entity
 @Table(name = "tb_pessoa")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-public class Pessoa implements Serializable{
+public class Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long codigo;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private Long idPessoa;
 	
 	@Column(nullable = false)
 	private String nome;
 	
-	private Date dataNascimentno;
+	@Column(nullable = false)
+	private Long cpf;
 	
 	@Column(nullable = false)
-	@Pattern(regexp = "[MF]",message = "O sexo deve ser M (masculino) ou F (feminino)")
-	private String sexo;
+//	@Pattern(regexp = "[MF]", message = "O sexo deve ser M (masculino) ou F (feminino)")
+	private Character sexo;
 	
-	@ManyToOne
-	@JoinColumn(name = "familiaCodigo")
-	private Familia familia;
+//	@ManyToOne
+//	@JoinColumn(name = "familiaCodigo")
+//	private Familia familia;
 	
+	@JsonIgnore
 	@OneToOne(mappedBy = "pessoa")
 	private Usuario usuario;
 	
+	@JsonIgnore
 	@OneToOne(mappedBy = "pessoa")
 	private Membro membro;
 	
-	private String cpf;
-	
-	private String rg;
-	
+//	private LocalDate dataNascimento;
+	private Long rg;
 	private String email;
-	
-	private String ddd;
-	
-	private String celular;
-	
+	private Integer ddd;
+	private Long telefone;
 	private String endereco;
-	
-	private Integer num_endereco;
-	
-	private String complemento;
-	
+	private Integer numEndereco;
 	private String bairro;
-	
+	private String complemento;
 	private String cidade;
-	
 	private String uf;
-	
-	private Integer cep;
+	private Long cep;
 	
     public static boolean validarCpf(String cpf) {
         if (cpf.length() != 11) {
@@ -126,6 +114,4 @@ public class Pessoa implements Serializable{
 
         return true;
     }
-
-	
 }

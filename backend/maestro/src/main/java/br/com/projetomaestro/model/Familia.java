@@ -1,13 +1,11 @@
 package br.com.projetomaestro.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,8 +28,7 @@ public class Familia implements Serializable{
 	
 	private String descricao;
 	
-	@OneToMany(mappedBy = "familia")
-	private List<Pessoa> pessoas;
-	
+//	@OneToMany(mappedBy = "familia")
+//	private List<Pessoa> pessoas;
 	
 }

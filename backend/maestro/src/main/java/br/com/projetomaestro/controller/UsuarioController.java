@@ -22,15 +22,13 @@ import br.com.projetomaestro.repository.UsuarioRepository;
 @RequestMapping("/usuario")
 public class UsuarioController {
 
-	@Autowired 
+	@Autowired
 	private UsuarioRepository usuarioRepository;
-	
 	
 	@GetMapping
 	public List<Usuario> listar() {
 		return usuarioRepository.findAll();
 	}
-
 
 	@GetMapping(path = { "/{codigo}" })
 	public Optional<Usuario> listarUsuario(@PathVariable Long codigo) {
@@ -40,14 +38,12 @@ public class UsuarioController {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario adicionar(@RequestBody Usuario usuario) {
-		usuarioRepository.save(usuario);
-		return usuario;
+		return usuarioRepository.save(usuario);
 	}
 
 	@DeleteMapping(path = { "/{codigo}" })
 	public Optional<Usuario> deletar(@PathVariable Long codigo) {
-		Optional<Usuario> u;
-		u = listarUsuario(codigo);
+		Optional<Usuario> u = listarUsuario(codigo);
 		usuarioRepository.deleteById(codigo);
 		return u;
 	}
@@ -61,9 +57,8 @@ public class UsuarioController {
 
 
 	private void updateUsuario(Usuario u, Usuario usuario) {
-		u.setPessoa(usuario.getPessoa());
-		u.setLogin(usuario.getLogin());
-		u.setSenha(usuario.getSenha());
+//		u.setPessoa(usuario.getPessoa());
+//		u.setLogin(usuario.getLogin());
+//		u.setSenha(usuario.getSenha());
 	}
-	
 }
