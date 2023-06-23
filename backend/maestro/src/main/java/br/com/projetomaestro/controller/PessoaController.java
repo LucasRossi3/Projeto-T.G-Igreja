@@ -16,66 +16,42 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projetomaestro.model.Pessoa;
+import br.com.projetomaestro.service.PessoaService;
 
 @RestController
 @RequestMapping("/pessoa")
 public class PessoaController {
 
 	@Autowired
-	private PessoaRepository pessoaRepository;
+	PessoaService pessoaService;
 
 	@GetMapping
 	public List<Pessoa> listar() {
-		return pessoaRepository.findAll();
+		return pessoaService.listar();
 	}
 
 
 	@GetMapping(path = { "/{codigo}" })
 	public Optional<Pessoa> listarPessoa(@PathVariable Long codigo) {
-		return pessoaRepository.findById(codigo);
+		return pessoaService.listarPessoa(codigo);
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Pessoa adicionar(@RequestBody Pessoa pessoa) {
-		pessoaRepository.save(pessoa);
-		return pessoa;
+		return pessoaService.adicionar(pessoa);
 	}
 
 	@DeleteMapping(path = { "/{codigo}" })
 	public Optional<Pessoa> deletar(@PathVariable Long codigo) {
-		Optional<Pessoa> p;
-		p = listarPessoa(codigo);
-		pessoaRepository.deleteById(codigo);
-		return p;
+		return pessoaService.deletar(codigo);
+		
 		
 	}
 	
 	@PutMapping(path = {"/{codigo}"})
 	public Pessoa atualizar(@PathVariable Long codigo, @RequestBody Pessoa pessoa){
-		Pessoa p = pessoaRepository.getReferenceById(codigo);
-		updatePessoa(p, pessoa);
-		return pessoaRepository.save(p);
-	}
-
-
-	private void updatePessoa(Pessoa p, Pessoa pessoa) {
-		p.setNome(pessoa.getNome());
-		p.setDataNascimentno(pessoa.getDataNascimentno());
-		p.setSexo(pessoa.getSexo());
-		p.setCpf(pessoa.getCpf());
-		p.setRg(pessoa.getRg());
-		p.setEmail(pessoa.getEmail());
-		p.setCelular(pessoa.getCelular());
-		p.setEndereco(pessoa.getEndereco());
-		p.setNum_endereco(pessoa.getNum_endereco());
-		p.setComplemento(pessoa.getComplemento());
-		p.setBairro(pessoa.getBairro());
-		p.setCidade(pessoa.getCidade());
-		p.setUf(pessoa.getUf());
-		p.setCep(pessoa.getCep());
-		System.out.println(p.toString());
-		
+		return pessoaService.atualizar(codigo, pessoa);
 	}
 	
 

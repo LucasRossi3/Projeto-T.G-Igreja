@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projetomaestro.model.Familia;
+import br.com.projetomaestro.repository.FamiliaRepository;
 
 @RestController
 @RequestMapping("/familia")

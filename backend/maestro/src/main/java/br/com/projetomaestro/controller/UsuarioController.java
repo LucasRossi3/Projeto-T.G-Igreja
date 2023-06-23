@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projetomaestro.model.Usuario;
+import br.com.projetomaestro.repository.UsuarioRepository;
 
 @RestController
 @RequestMapping("/usuario")
