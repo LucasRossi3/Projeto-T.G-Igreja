@@ -31,7 +31,7 @@ public class PessoaController {
 
 
 	@GetMapping(path = { "/{codigo}" })
-	public Optional<Pessoa> listaPessoa(@PathVariable Long codigo) {
+	public Optional<Pessoa> listarPessoa(@PathVariable Long codigo) {
 		return pessoaRepository.findById(codigo);
 	}
 
@@ -45,7 +45,7 @@ public class PessoaController {
 	@DeleteMapping(path = { "/{codigo}" })
 	public Optional<Pessoa> deletar(@PathVariable Long codigo) {
 		Optional<Pessoa> p;
-		p = listaPessoa(codigo);
+		p = listarPessoa(codigo);
 		pessoaRepository.deleteById(codigo);
 		return p;
 		
@@ -53,7 +53,6 @@ public class PessoaController {
 	
 	@PutMapping(path = {"/{codigo}"})
 	public Pessoa atualizar(@PathVariable Long codigo, @RequestBody Pessoa pessoa){
-		System.out.println(pessoa.toString());
 		Pessoa p = pessoaRepository.getReferenceById(codigo);
 		updatePessoa(p, pessoa);
 		return pessoaRepository.save(p);
@@ -76,5 +75,8 @@ public class PessoaController {
 		p.setUf(pessoa.getUf());
 		p.setCep(pessoa.getCep());
 		System.out.println(p.toString());
+		
 	}
+	
+
 }
