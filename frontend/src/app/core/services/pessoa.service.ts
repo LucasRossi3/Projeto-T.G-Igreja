@@ -7,9 +7,9 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class PessoasService {
+export class PessoaService {
 
-  public pessoasUrl: string = environment.baseUrl + '/pessoas';
+  public pessoaUrl: string = environment.baseUrl + '/pessoas';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,16 +18,16 @@ export class PessoasService {
     const headers = { 'Content-Type': 'application/json' };
     const body = JSON.stringify(pessoa);
 
-    return this.httpClient.post<Pessoa>(`${this.pessoasUrl}`, body, { headers });
+    return this.httpClient.post<Pessoa>(`${this.pessoaUrl}`, body, { headers });
   }
 
   // Read
   public getPessoas(): Observable<Pessoa[]> {
-    return this.httpClient.get<Pessoa[]>(`${this.pessoasUrl}`);
+    return this.httpClient.get<Pessoa[]>(`${this.pessoaUrl}`);
   }
 
   public getPessoaByCpf(cpf: number): Observable<any> {
-    return this.httpClient.get<any>(`${this.pessoasUrl}?cpf=${cpf}`)
+    return this.httpClient.get<any>(`${this.pessoaUrl}?cpf=${cpf}`)
       .pipe(
         retry(3),
         map(res => {
@@ -41,7 +41,7 @@ export class PessoasService {
   }
 
   public getPessoaById(id: number): Observable<any> {
-    return this.httpClient.get<any>(`${this.pessoasUrl}?id=${id}`)
+    return this.httpClient.get<any>(`${this.pessoaUrl}?id=${id}`)
       .pipe(
         retry(3),
         map(res => {
@@ -56,11 +56,11 @@ export class PessoasService {
 
   // Update
   public atualizarPessoa(id: number, pessoa: Pessoa): Observable<any> {
-    return this.httpClient.put<any>(`${this.pessoasUrl}/${id}`, pessoa);
+    return this.httpClient.put<any>(`${this.pessoaUrl}/${id}`, pessoa);
   }
 
   // Delete
   public removerPessoa(id: number): Observable<any> {
-    return this.httpClient.delete<any>(`${this.pessoasUrl}/${id}`);
+    return this.httpClient.delete<any>(`${this.pessoaUrl}/${id}`);
   }
 }

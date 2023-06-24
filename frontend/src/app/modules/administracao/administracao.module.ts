@@ -6,22 +6,22 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { CoreModule } from 'src/app/core/core.module';
 import { CpfPipe } from 'src/app/shared/pipes/cpf.pipe';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { FamiliasComponent } from './registros/familias/familias.component';
-import { MembrosComponent } from './registros/membros/membros.component';
-import { ObreirosComponent } from './registros/obreiros/obreiros.component';
-import { PessoasComponent } from './registros/pessoas/pessoas.component';
+import { FamiliaComponent } from './registros/familia/familia.component';
+import { MembroComponent } from './registros/membro/membro.component';
+import { ObreiroComponent } from './registros/obreiro/obreiro.component';
+import { PessoaComponent } from './registros/pessoa/pessoa.component';
 import { RegistrosComponent } from './registros/registros.component';
-import { UsuariosComponent } from './registros/usuarios/usuarios.component';
+import { UsuarioComponent } from './registros/usuario/usuario.component';
 
 @NgModule({
   declarations: [
     RegistrosComponent,
-    PessoasComponent,
-    FamiliasComponent,
+    PessoaComponent,
+    FamiliaComponent,
     CpfPipe,
-    MembrosComponent,
-    ObreirosComponent,
-    UsuariosComponent
+    MembroComponent,
+    ObreiroComponent,
+    UsuarioComponent
   ],
   imports: [
     CommonModule,
@@ -33,4 +33,4 @@ import { UsuariosComponent } from './registros/usuarios/usuarios.component';
     SharedModule
   ]
 })
-export class AdministracaoModule {}
+export class AdministracaoModule { }

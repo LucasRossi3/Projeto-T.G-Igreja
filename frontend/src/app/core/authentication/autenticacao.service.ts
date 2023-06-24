@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subject, map, retry, switchMap } from 'rxjs';
+import { Observable, Subject, map, retry } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class AutenticacaoService {
   public subjectLogin: Subject<string> = new Subject();
 
   constructor(private httpClient: HttpClient, private router: Router) { }
-  
+
   // Cadastrar usuário
   // public cadastrarUsuario(usuario: Usuario): Observable<Usuario> {
   //   const headers = { 'Content-Type': 'application/json' };
@@ -49,7 +49,7 @@ export class AutenticacaoService {
       let token: string | null = localStorage.getItem('idToken');
       token === null ? this.router.navigateByUrl('') : this.idToken = token;
     }
-    
+
     return this.idToken !== '';
   }
 

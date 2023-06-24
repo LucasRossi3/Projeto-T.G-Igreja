@@ -1,14 +1,14 @@
 import { Component, ElementRef, Output, ViewChild, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { PessoaService } from 'src/app/core/services/pessoa.service';
 import { Pessoa } from 'src/app/shared/models/pessoa.model';
-import { PessoasService } from './../../../../core/services/pessoas.service';
 
 @Component({
-  selector: 'app-pessoas',
-  templateUrl: './pessoas.component.html',
-  styleUrls: ['./pessoas.component.css']
+  selector: 'app-pessoa',
+  templateUrl: './pessoa.component.html',
+  styleUrls: ['./pessoa.component.css']
 })
-export class PessoasComponent {
+export class PessoaComponent {
 
   @ViewChild('cpf') cpfInput!: ElementRef;
   @ViewChild('btnEditar') btnEditar!: ElementRef;
@@ -38,18 +38,18 @@ export class PessoasComponent {
     'cep': new FormControl(null, [Validators.required, Validators.minLength(8), Validators.maxLength(8)]),
   });
 
-  constructor (private pessoasService: PessoasService) { }
+  constructor(private pessoaService: PessoaService) { }
 
   ngOnInit() {
     this.getPessoas();
   }
 
   public getPessoas(): void {
-    this.pessoasService.getPessoas()
-    .subscribe({
-      next: (pessoas: Pessoa[]) => this.pessoas = pessoas,
-      error: err => console.log(err)
-    });
+    this.pessoaService.getPessoas()
+      .subscribe({
+        next: (pessoas: Pessoa[]) => this.pessoas = pessoas,
+        error: err => console.log(err)
+      });
   }
 
   public pesquisar(value: string): void {
@@ -61,14 +61,14 @@ export class PessoasComponent {
       return;
     }
 
-    this.pessoasService.getPessoaByCpf(cpf)
+    this.pessoaService.getPessoaByCpf(cpf)
       .subscribe({
         next: (pessoa: Pessoa) => {
           this.pessoas = [];
           this.pessoas.push(pessoa);
         },
         error: err => this.errorMessage = err
-     });
+      });
   }
 
   public limpar(): void {
@@ -102,7 +102,7 @@ export class PessoasComponent {
 
   public salvar(): void {
     if (this.isEditar) {
-      this.pessoasService.atualizarPessoa(this.pessoa.id, this.formulario.value)
+      this.pessoaService.atualizarPessoa(this.pessoa.id, this.formulario.value)
         .subscribe({
           next: (pessoa: Pessoa) => {
             console.log(pessoa);
@@ -110,9 +110,9 @@ export class PessoasComponent {
             this.getPessoas();
           },
           error: err => console.log(err)
-      });
+        });
     } else {
-      this.pessoasService.cadastrarPessoa(this.formulario.value)
+      this.pessoaService.cadastrarPessoa(this.formulario.value)
         .subscribe({
           next: (pessoa: Pessoa) => {
             console.log(pessoa);
@@ -132,7 +132,7 @@ export class PessoasComponent {
   }
 
   public remover(): void {
-    this.pessoasService.removerPessoa(this.pessoa.id)
+    this.pessoaService.removerPessoa(this.pessoa.id)
       .subscribe({
         next: res => {
           console.log(res);

@@ -7,9 +7,9 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class CongregacoesService {
+export class CongregacaoService {
 
-  public congregacoesUrl: string = environment.baseUrl + '/congregacoes';
+  public congregacaoUrl: string = environment.baseUrl + '/congregacoes';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,16 +18,16 @@ export class CongregacoesService {
     const headers = { 'Content-Type': 'application/json' };
     const body = JSON.stringify(congregacao);
 
-    return this.httpClient.post<Congregacao>(`${this.congregacoesUrl}`, body, { headers });
+    return this.httpClient.post<Congregacao>(`${this.congregacaoUrl}`, body, { headers });
   }
 
   // Read
   public getCongregacoes(): Observable<Congregacao[]> {
-    return this.httpClient.get<Congregacao[]>(`${this.congregacoesUrl}`);
+    return this.httpClient.get<Congregacao[]>(`${this.congregacaoUrl}`);
   }
 
   public getCongregacaoById(id: number): Observable<any> {
-    return this.httpClient.get<any>(`${this.congregacoesUrl}?id=${id}`)
+    return this.httpClient.get<any>(`${this.congregacaoUrl}?id=${id}`)
       .pipe(
         retry(3),
         map(res => {
@@ -42,11 +42,11 @@ export class CongregacoesService {
 
   // Update
   public atualizarCongregacao(id: number, congregacao: Congregacao): Observable<any> {
-    return this.httpClient.put<any>(`${this.congregacoesUrl}/${id}`, congregacao);
+    return this.httpClient.put<any>(`${this.congregacaoUrl}/${id}`, congregacao);
   }
 
   // Delete
   public removerCongregacao(id: number): Observable<any> {
-    return this.httpClient.delete<any>(`${this.congregacoesUrl}/${id}`);
+    return this.httpClient.delete<any>(`${this.congregacaoUrl}/${id}`);
   }
 }

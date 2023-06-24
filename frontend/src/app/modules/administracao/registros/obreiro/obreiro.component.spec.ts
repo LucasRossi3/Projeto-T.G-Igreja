@@ -1,16 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ObreiroComponent } from './obreiros.component';
 
-import { ObreirosComponent } from './obreiros.component';
-
-describe('ObreirosComponent', () => {
-  let component: ObreirosComponent;
-  let fixture: ComponentFixture<ObreirosComponent>;
+describe('ObreiroComponent', () => {
+  let component: ObreiroComponent;
+  let fixture: ComponentFixture<ObreiroComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ObreirosComponent]
+      declarations: [ObreiroComponent]
     });
-    fixture = TestBed.createComponent(ObreirosComponent);
+    fixture = TestBed.createComponent(ObreiroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

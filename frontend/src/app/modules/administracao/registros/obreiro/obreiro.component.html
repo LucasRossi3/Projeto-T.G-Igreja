@@ -1,12 +1,14 @@
 <div class="container mt-3">
   <div class="row pesquisa">
-    <label for="congregacoes" class="form-label">Filtrar membros</label>
-    <select #select id="congregacoes" class="form-select" (change)="filtrar(select.value)">
-      <option selected value=""></option>
-      <option *ngFor="let congregacao of congregacoes" value="{{ congregacao.id }}">{{ congregacao.nome }}</option>
-    </select>
+    <div>
+      <label for="funcoes" class="form-label">Filtrar obreiros</label>
+      <select #select id="funcoes" class="form-select" (change)="filtrar(select.value)">
+        <option selected value=""></option>
+        <option *ngFor="let funcao of funcoes" value="{{ funcao.id }}">{{ funcao.descricaoFuncao }}</option>
+      </select>
+    </div>
 
-    <div class="col-12" class="mt-3" role="group" aria-label="Button group">
+    <div class="d-flex" class="mt-3" role="group" aria-label="Button group">
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" (click)="novo()">
         Novo cadastro
@@ -19,16 +21,16 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nome</th>
-        <th scope="col">Congregação</th>
-        <th scope="col">Sede</th>
+        <th scope="col">Função</th>
+        <!-- <th scope="col">Email</th> -->
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let membro of membros" data-bs-toggle="modal" data-bs-target="#modal" (click)="abrirModal(membro)">
-        <th scope="row">{{ membro.id }}</th>
-        <td>{{ membro.pessoa.nome }}</td>
-        <td>{{ membro.congregacao.nome }}</td>
-        <td>{{ membro.congregacao.sede.descricaoSede }}</td>
+      <tr *ngFor="let obreiro of obreiros" data-bs-toggle="modal" data-bs-target="#modal" (click)="abrirModal(obreiro)">
+        <th scope="row">{{ obreiro.id }}</th>
+        <td>{{ obreiro.pessoa.nome }}</td>
+        <td>{{ obreiro.funcao.descricaoFuncao }}</td>
+        <!-- <td>{{ obreiro.pessoa.email }}</td> -->
       </tr>
     </tbody>
   </table>
@@ -53,10 +55,10 @@
             </select>
           </div>
           <div class="col-6">
-            <label for="congregacao" class="form-label">Congregação</label>
-            <select #select id="congregacoes" class="form-select" formControlName="congregacao">
+            <label for="funcao" class="form-label">Congregação</label>
+            <select #select id="funcoes" class="form-select" formControlName="funcao">
               <option selected value=""></option>
-              <option *ngFor="let congregacao of congregacoes" value="{{ congregacao.id }}">{{ congregacao.nome }}</option>
+              <option *ngFor="let funcao of funcoes" value="{{ funcao.id }}">{{ funcao.descricaoFuncao }}</option>
             </select>
           </div>
           <div class="col-6"></div>

@@ -1,18 +1,18 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CongregacoesService } from 'src/app/core/services/congregacoes.service';
-import { MembrosService } from 'src/app/core/services/membros.service';
+import { CongregacaoService } from 'src/app/core/services/congregacao.service';
+import { MembroService } from 'src/app/core/services/membro.service';
 import { Membro } from 'src/app/shared/models/membro.model';
 import { Pessoa } from 'src/app/shared/models/pessoa.model';
-import { PessoasService } from '../../../../core/services/pessoas.service';
-import { Congregacao } from './../../../../shared/models/congregacao.model';
+import { PessoaService } from '../../../../core/services/pessoa.service';
+import { Congregacao } from '../../../../shared/models/congregacao.model';
 
 @Component({
-  selector: 'app-membros',
-  templateUrl: './membros.component.html',
-  styleUrls: ['./membros.component.css']
+  selector: 'app-membro',
+  templateUrl: './membro.component.html',
+  styleUrls: ['./membro.component.css']
 })
-export class MembrosComponent {
+export class MembroComponent {
 
   @ViewChild('pessoa') pessoaSelect!: ElementRef;
   @ViewChild('btnEditar') btnEditar!: ElementRef;
@@ -33,9 +33,9 @@ export class MembrosComponent {
   });
 
   constructor(
-    private membrosService: MembrosService,
-    private congregacoesService: CongregacoesService,
-    private pessoasService: PessoasService) { }
+    private membroService: MembroService,
+    private congregacaoService: CongregacaoService,
+    private pessoaService: PessoaService) { }
 
   ngOnInit() {
     this.getCongregacoes();
@@ -43,7 +43,7 @@ export class MembrosComponent {
   }
 
   public getCongregacoes(): void {
-    this.congregacoesService.getCongregacoes()
+    this.congregacaoService.getCongregacoes()
       .subscribe({
         next: (congregacoes: Congregacao[]) => this.congregacoes = congregacoes,
         error: err => console.log(err)
@@ -51,17 +51,9 @@ export class MembrosComponent {
   }
 
   public getMembros(): void {
-    this.membrosService.getMembros()
+    this.membroService.getMembros()
       .subscribe({
         next: (membros: Membro[]) => this.membros = membros,
-        error: err => console.log(err)
-      });
-  }
-
-  public getPessoas(): void {
-    this.pessoasService.getPessoas()
-      .subscribe({
-        next: (pessoas: Pessoa[]) => this.pessoas = pessoas,
         error: err => console.log(err)
       });
   }
@@ -69,7 +61,7 @@ export class MembrosComponent {
   public getPessoasMembros(): void {
     this.pessoasMembros = [];
 
-    this.pessoasService.getPessoas()
+    this.pessoaService.getPessoas()
       .subscribe({
         next: (pessoas: Pessoa[]) => {
           for (let pessoa of pessoas) {
@@ -90,7 +82,7 @@ export class MembrosComponent {
   public getPessoasNaoMembros(): void {
     this.pessoasNaoMembros = [];
 
-    this.pessoasService.getPessoas()
+    this.pessoaService.getPessoas()
       .subscribe({
         next: (pessoas: Pessoa[]) => {
           for (let pessoa of pessoas) {
@@ -121,7 +113,7 @@ export class MembrosComponent {
       return;
     }
 
-    this.membrosService.getMembrosByCongregacao(id)
+    this.membroService.getMembrosByCongregacao(id)
       .subscribe({
         next: (membros: Membro[]) => this.membros = membros,
         error: err => console.log(err)
@@ -161,18 +153,18 @@ export class MembrosComponent {
     let idPessoa = this.formulario.get('pessoa')?.value;
     let idCongregacao = this.formulario.get('congregacao')?.value;
 
-    this.pessoasService.getPessoaById(idPessoa)
+    this.pessoaService.getPessoaById(idPessoa)
       .subscribe({
         next: (pessoa: Pessoa) => {
           this.membro.pessoa = pessoa;
 
-          this.congregacoesService.getCongregacaoById(idCongregacao)
+          this.congregacaoService.getCongregacaoById(idCongregacao)
             .subscribe({
               next: (congregacao: Congregacao) => {
                 this.membro.congregacao = congregacao;
 
                 if (this.isEditar) {
-                  this.membrosService.atualizarMembro(this.membro.id, this.membro)
+                  this.membroService.atualizarMembro(this.membro.id, this.membro)
                     .subscribe({
                       next: (membro: Membro) => {
                         console.log(membro);
@@ -182,7 +174,7 @@ export class MembrosComponent {
                       error: err => console.log(err)
                     });
                 } else {
-                  this.membrosService.cadastrarMembro(this.membro)
+                  this.membroService.cadastrarMembro(this.membro)
                     .subscribe({
                       next: (membro: Membro) => {
                         console.log(membro);
@@ -209,7 +201,7 @@ export class MembrosComponent {
   }
 
   public remover(): void {
-    this.membrosService.removerMembro(this.membro.id)
+    this.membroService.removerMembro(this.membro.id)
       .subscribe({
         next: res => {
           console.log(res);
